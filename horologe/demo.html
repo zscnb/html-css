@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>钟表效果</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        .wrapper {
+            width: 512px;
+            height: 512px;
+            position: absolute;
+            left: calc(50% - 250px);
+            top: calc(50% - 250px);
+            /* border: 1px solid #000; */
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .clock {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            /* border:1px solid #000; */
+            background-image: url('./img/clock.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        @keyframes run {
+            0% {
+                transform: rotate(180deg);
+            }
+
+            100% {
+                transform: rotate(540deg)
+            }
+        }
+
+        .seconds {
+            position: absolute;
+            left: 248px;
+            top: 180px;
+            width: 16px;
+            height: 278px;
+            background-image: url('./img/second.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform-origin: center 76px;
+            transform: rotate(180deg);
+            z-index: 3;
+            animation: run 60s steps(60, end) infinite;
+        }
+
+        .minutes {
+            position: absolute;
+            left: 241px;
+            top: 240px;
+            width: 32px;
+            height: 218px;
+            background-image: url('./img/minute.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform-origin: center 16px;
+            transform: rotate(180deg);
+            z-index: 2;
+            animation: run 3600s steps(60, end) infinite;
+        }
+
+        @keyframes hoursrun {
+            0%{
+                transform: rotate(180deg);
+            }
+            100%{
+                transform: rotate(540deg);
+            }
+        }
+
+        .hours {
+            position: absolute;
+            left: 240px;
+            top: 240px;
+            width: 32px;
+            height: 148px;
+            transform-origin: center 16px;
+            background-image: url('./img/hour.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 1;
+            animation:hoursrun 21600s steps(60, end) infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="clock">
+            <div class="seconds"></div>
+            <div class="minutes"></div>
+            <div class="hours"></div>
+        </div>
+    </div>
+</body>
+
+</html>

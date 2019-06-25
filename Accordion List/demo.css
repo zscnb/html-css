@@ -1,0 +1,87 @@
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-decoration: none;
+}
+:root,
+body{
+    background-color:#333;
+}
+.wrapper{
+    width:80%;
+    margin:50px auto;
+    padding:40px;
+}
+.wrapper ul{
+    width:100%;
+    height:300px;
+    overflow: hidden;
+}
+.wrapper ul li{
+    float: left;
+    width:92.2px;
+    height:260px;
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;  
+    box-sizing: border-box;  
+}
+.picBox{
+    width:100%;
+    height:100%;
+}
+.picBox1{
+    background:url(images/1.jpg) no-repeat center 0;
+}
+.picBox2{
+    background:url(images/2.jpg) no-repeat center 0;
+}
+.picBox3{
+    background:url(images/3.jpg) no-repeat center 0;
+}
+.picBox4{
+    background:url(images/4.jpg) no-repeat center 0;
+}
+.picBox5{
+    background:url(images/5.jpg) no-repeat center 0;
+}
+.picBox6{
+    background:url(images/6.jpg) no-repeat center 0;
+}
+.picBox7{
+    background:url(images/7.jpg) no-repeat center 0;
+}
+.wrapper ul li .title{
+    position:absolute;
+    overflow:hidden;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    background:rgba(0,0,0,0.5);
+}
+.wrapper ul li .title h1 a{
+    color:#fff;
+    width:30px;
+    margin:0 auto;
+    display:block;
+    font:20px;
+    padding-top:30px;
+    opacity:0.8;
+}
+div.location:not(:target){
+    display:none;
+}
+.wrapper ul li .location{
+    width:400px;
+    height:40px;
+    padding-left:20px;
+    padding-right:30px;         
+    position:absolute;
+    left:0; 
+    bottom:-50px;
+    background:rgba(0,0,0,0.3); 
+    color:#FFF; 
+    transition: all .6 ease-in-out;
+}

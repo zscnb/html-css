@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用flex布局实现人物介绍</title>
+    <style>
+        *{
+            margin:0;
+        }
+        :root,body{
+            background-color: aliceblue;
+            font-size: 12px;
+        }
+        .wrapper{
+            width: 700px;
+            height: 300px;
+            background-color: saddlebrown;
+            margin: 100px auto;
+            box-shadow: 0 0 2px 2px sandybrown;
+            display: flex;
+            resize: both;
+            overflow: hidden;
+        }
+        .left{
+            flex:0 0 30%;
+            /* border:1px solid black; */
+        }
+        .left img{
+            width: 100%;
+            height: 100%;
+        }
+        .right{
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            padding: 0 2rem;
+            align-content: center;
+        }
+        .right p{
+            flex: 0 0 10%;
+            font-size: 3rem;
+            font-weight: bolder;
+            margin: 8% 0 2% 0;
+            /* border: 1px solid #fff; */
+            text-indent: 2rem;
+        }
+        .right .content{
+            flex: 2 1 80%;
+            margin-left: 8%;
+            font-size: 1.5rem;
+            text-indent: 2rem;
+            word-break: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="left">
+            <img src="./img/1.jpg" alt="">
+        </div>
+        <div class="right">
+            <p>刘德华:</p>
+            <div class="content">刘德华（Andy Lau），1961年9月27日出生于中国香港，中国香港男演员、歌手、作词人、制片人。1981年出演电影处女作《彩云曲》。
+                1983年主演的武侠剧《神雕侠侣》在香港获得62点的收视纪录。1991年创办天幕电影公司。1992年，凭借传记片《五亿探长雷洛传》获得第11届香港电影金像奖最佳男主角提名。
+                1994年担任剧情片《天与地》的制片人。2000年凭借警匪片《暗战》获得第19届香港电影金像奖最佳男主角奖。2004年凭借警匪片《无间道3：终极无间》获得第41届台湾金马奖最佳男主角奖。2005年获得香港UA院线颁发的全港最高累积票房香港男演员”奖。2006年获得釜山国际电影节亚洲最有贡献电影人奖。2011年主演剧情片《桃姐》，并凭借该片先后获得台湾金马奖最佳男主角奖、香港电影金像奖最佳男主角奖；同年担任第49届台湾电影金马奖评审团主席。2017年主演警匪动作片《拆弹专家》...</div>
+        </div>
+    </div>
+</body>
+
+</html>

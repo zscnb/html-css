@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>打字效果</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .wrapper {
+            width: 500px;
+            height: 500px;
+            /* border: 1px solid #000; */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        @keyframes curso {
+            0% {
+                border-left-color: rgba(0, 0, 0, 0);
+            }
+
+            50% {
+                border-left-color: rgba(0, 0, 0, 1);
+            }
+
+            100% {
+                border-left-color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        @keyframes cover {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        .content {
+            position: relative;
+            display: inline-block;
+            height: 100px;
+            /* background-color: red; */
+            line-height: 100px;
+            box-sizing: border-box;
+            /* word-break: break-word; */
+            font-family: monospace;
+            /*设置等宽等高*/
+            font-size: 80px;
+        }
+
+        .content::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            height: 90px;
+            width: 100%;
+            background-color: #fff;
+            border-left: 2px solid black;
+            box-sizing: border-box;
+            animation: curso 1s steps(1, end) infinite,
+                cover 12s steps(12, end) infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content">abfhkf rtyui </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+:root,
+body {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper ul {
+    width: 80%;
+    height: 80%;
+    /* border: 1px solid #fff; */
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    align-items: center;
+}
+
+.wrapper ul li {
+    width: 16%;
+    height: 100%;
+    /* border: 1px solid #fff; */
+    border-radius: 20px;
+    background-color: rgba(243, 235, 235, 0.2);
+    overflow: hidden;
+    /* 点击close,反方向回去 */
+    transition: width .5s linear, height .5s linear .5s;
+}
+
+.wrapper ul li .inner {
+    width: 100%;
+    height: 100%;
+    /* border-radius: 20px; */
+    position: relative;
+    transition: transform .5s linear;
+}
+
+/* 有init类名就操作动画，没有就没有任何操作 */
+.wrapper.init ul li .inner {
+    transform: translateY(100%);
+}
+
+/* @keyframes move {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+} */
+
+.wrapper ul li:nth-of-type(1) .inner {
+    transition-delay: 0
+}
+
+.wrapper ul li:nth-of-type(2) .inner {
+    transition-delay: 0.1s
+}
+
+.wrapper ul li:nth-of-type(3) .inner {
+    transition-delay: 0.2s
+}
+
+.wrapper ul li:nth-of-type(4) .inner {
+    transition-delay: 0.3s
+}
+
+.wrapper ul li:nth-of-type(5) .inner {
+    transition-delay: 0.4s
+}
+
+.wrapper ul li:nth-of-type(6) .inner {
+    transition-delay: 0.5s
+}
+
+.wrapper ul li .inner .bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    opacity: .5;
+    transition: all .2s linear;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.wrapper ul li:hover .inner .bg {
+    opacity: 1;
+}
+
+.wrapper ul li:nth-of-type(1) .inner .bg {
+    background-image: url('../img/1.jpg');
+
+}
+
+.wrapper ul li:nth-of-type(2) .inner .bg {
+    background-image: url('../img/2.jpg');
+
+}
+
+.wrapper ul li:nth-of-type(3) .inner .bg {
+    background-image: url('../img/3.jpg');
+
+}
+
+.wrapper ul li:nth-of-type(4) .inner .bg {
+    background-image: url('../img/4.jpg');
+
+}
+
+.wrapper ul li:nth-of-type(5) .inner .bg {
+    background-image: url('../img/5.jpg');
+
+}
+
+.wrapper ul li:nth-of-type(6) .inner .bg {
+    background-image: url('../img/6.jpg');
+
+}
+
+.wrapper ul li .inner .title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    transition: all .2s linear;
+}
+
+.wrapper ul li:hover .inner .title {
+    font-size: 25px;
+}
+
+.wrapper.wrap-active ul li.active {
+    width: 100%;
+}
+
+.wrapper.wrap-active ul li:not(.active) {
+    width: 0%;
+    height: 0%;
+    /* transition: all .5s linear; */
+}
+
+.wrapper.wrap-active ul li .inner .title {
+    opacity: 0;
+}
+
+.wrapper.wrap-active ul li {
+    /* transition: all .5s linear .5s;
+     */
+    transition: height .5s linear, width .5s linear .5s;
+}
+
+.wrapper ul li .inner .dir {
+    position: absolute;
+    top: 25px;
+    left: 50px;
+    opacity: 0;
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    /* border:1px solid #fff; */
+}
+
+.wrapper.wrap-active ul li .inner .dir {
+    opacity: 1;
+    transition: opacity .5s linear 1s;
+}
+
+.wrapper.wrap-active ul li .inner .dir .header {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    width: 5%;
+}
+
+.wrapper.wrap-active ul li .inner .dir .header:hover {
+    font-size: 25px;
+}
+
+.wrapper.wrap-active ul li .dir .close {
+    position: absolute;
+    right: 100px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.wrapper.wrap-active ul li .dir .close:hover {
+    background-color: #ddd;
+}
+
+li.active .inner .dir .close {
+    transform: rotate(360deg);
+    transition: transform .5s linear 1s;
+}
+
+.wrapper.wrap-active ul li .dir .close::before,
+.wrapper.wrap-active ul li .dir .close::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: #fff;
+    top: 50%;
+    left: 0;
+}
+
+.wrapper.wrap-active ul li .dir .close::before {
+    transform: rotateZ(45deg);
+}
+
+.wrapper.wrap-active ul li .dir .close::after {
+    transform: rotateZ(-45deg);
+}

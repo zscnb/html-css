@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跑马效果</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .wrapper {
+            width: 500px;
+            height: 500px;
+            background-image: url('./img/cao.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            left: calc(50% - 250px);
+            top: calc(50% - 250px);
+            /* border: 1px solid #000; */
+            box-sizing: border-box;
+            box-shadow: 0 0 2px 3px #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .horse {
+            align-self: center;
+            width: 200px;
+            height: 100px;
+            /* border: 1px solid #000; */
+            background-image: url('./img/horse.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0 0;
+            animation: run 1s steps(12, end) infinite;
+        }
+
+        .horse1 {
+            align-self: flex-end;
+            width: 200px;
+            height: 100px;
+            /* border: 1px solid #000; */
+            background-image: url('./img/horse.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: -200px 0;
+            animation: run .3s steps(12, end) infinite;
+        }
+
+        .horse2 {
+            align-self: flex-start;
+            width: 200px;
+            height: 100px;
+            /* border: 1px solid #000; */
+            background-image: url('./img/horse.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: -200px 0;
+            animation: run .6s steps(12, end) infinite;
+        }
+
+        @keyframes run {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -2400px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="horse"></div>
+        <div class="horse1"></div>
+        <div class="horse2"></div>
+    </div>
+</body>
+
+</html>
